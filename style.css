@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+:root{
+	--red: hsl(0, 100%, 74%);
+	--green: hsl(154, 59%, 51%);
+	--blue: hsl(248, 32%, 49%);
+	--darkblue: hsl(249, 10%, 26%);
+	--grayishblue: hsl(246, 25%, 77%);
+
+	--fw-light: 400;
+    --fw-normal: 500;
+    --fw-bold: 600;
+    --fw-extrabold: 700;
+}
+
+*,
+*::before,
+*::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background: var(--red) url(images/bg-intro-mobile.png) no-repeat;
+	font-family: Poppins, san-serif;
+	font-size: 16px;	
+	padding: 0 20px;
+	min-height: 100vh;
+}
+
+#left{
+	color: white;
+	text-align: center;
+}
+
+#title{
+	font-size: 28px;
+	font-weight: var(--fw-extrabold);
+	margin-bottom: 16px;
+	margin-top: 60px;
+}
+
+#para{
+	margin-bottom: 64px;
+}
+
+#subtitle{
+	color: white;
+	text-align: center;
+	background-color: var(--blue);
+	padding: 15px 80px;
+	font-size: 15px;
+	font-weight: var(--fw-light);
+	border-radius: 10px;
+	box-shadow: 0 8px rgba(62, 60, 73,0.3);
+	margin-bottom: 25px;
+}
+
+#subtitle > span{
+	font-weight: var(--fw-bold);
+}
+
+#signupform{
+	background-color: white;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+
+
+#signupform input{
+	color: var(--darkblue);
+	width: 100%;
+	display: block;
+	border: 1px solid var(--grayishblue);
+	padding: 15px;
+	border-radius: 5px;
+	font-weight: var(--fw-bold);
+
+}
+
+#signupform input:focus{
+	outline: none;
+	border: 1px solid var(--grayishblue);
+	border-bottom: 1px solid var(--darkblue);
+}
+
+
+#signupform > div{
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.error-icon{
+	position: absolute;
+	right: 8%;
+	top: 13px;
+	display: none;
+
+}
+
+span.error-msg{
+	display: none;
+	color: var(--red);
+	float: right;
+	font-size: 10px;
+	font-weight: var(--fw-bold);
+	font-style: italic;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.inputField.error .error-icon,
+.inputField.error .error-msg{
+	display: block;
+}
+
+.inputField.error > input{
+	border: 2px solid var(--red);
+}
+
+
+#signupform > button[type = submit]{
+	background-color: var(--green);
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: var(--fw-bold);
+	border-radius: 5px;
+	border: none;
+	border-bottom: 3px outset var(--green);
+	padding: 15px;
+}
+
+#signupform > button[type = submit]:hover{
+	cursor: pointer;
+}
+
+#signupform > button[type = submit]:active{
+	opacity: 0.7;
+}
+
+
+#signupform > p{
+	font-size: 11px;
+	padding: 8px 30px;
+	color: var(--grayishblue);
+	text-align: center;
+}
+
+#signupform a{
+	color: var(--red);
+	font-weight: var(--fw-bold);
+	text-decoration: none;
+}
+
+footer{
+	margin-top: 15px;
+}
+
+@media (min-width: 640px){
+	body{
+		background-image: url(images/bg-intro-desktop.png);
+		background-size: cover;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	main{
+		max-width: 1110px;
+		display: flex;
+		padding:0 13px;
+		align-items: center;
+
+	}
+
+	#left{
+		flex-basis: 50%;
+		padding-right: 50px;
+	}
+
+	#title{
+		font-size: 50px;
+		text-align: left;
+		line-height: 55px;
+	}
+
+	#para{
+		text-align: left;
+	}
+
+	#right{
+		padding-left: 50px;
+		flex-basis: 50%;
+	}
+
+	#subtitle{
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	#signupform > p{
+		padding: 8px;
+	}
+}
